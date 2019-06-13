@@ -19,8 +19,10 @@ fi
 echo -e "\n\tGIT STATUS"
 git status
 
+# Unless 'action' is 'q'uit
 while [ "$action" != "q" ] && [ "$action" != "Q" ]
 do
+  # Show menu
   echo -e "\nOptions: (quit with 'q')"
   echo -e "\t'a' for git add (all)"
   echo -e "\t'd' for git diff"
@@ -32,6 +34,7 @@ do
 
   read -p "Action to take: " action
 
+  # Process input
   case "$action" in
     "a" | "A")
       git add .
